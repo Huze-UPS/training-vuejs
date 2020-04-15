@@ -15,12 +15,10 @@
         <h3>Afficher une liste à puces avec tous les films qui sont déjà sortis</h3>
         <small>Devrait ressembler à ça</small>
         <ul>
-            <li>
-                Titre du film (année du film)
+            <li v-for="movie in movies" :key="movies.title" v-if="movie.rating > 2">
+                <span :style="movie.comingSoon ? 'color: red' : ''">{{ movie.title}} {{movie.year}}</span>
                 <ul>
-                    <li>Acteur 1</li>
-                    <li>Acteur 2</li>
-                    <li>Acteur 3</li>
+                    <li v-for="actor in movie.actors">{{ actor }}</li>
                 </ul>
             </li>
         </ul>
