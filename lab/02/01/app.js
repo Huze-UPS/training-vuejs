@@ -27,7 +27,7 @@ function initApp() {
             },
             removeFromCart: function(itemToRemove) {
                 this.carItems = this.cartItems.filter(item => itemToRemove.id !== item.id);
-            }
+            },
         }
     });
 }
