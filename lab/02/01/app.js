@@ -10,8 +10,9 @@ function initApp() {
             contact: {
                 firstName: "",
                 lastName: "",
-                adress: "",
-                
+                address: "",
+                zipCode: "",
+                country: {},
             }
         },
         computed: {
@@ -26,7 +27,7 @@ function initApp() {
                 this.cartItems.push(this.itemSelected);
             },
             removeFromCart: function(itemToRemove) {
-                this.carItems = this.cartItems.filter(item => itemToRemove.id !== item.id);
+                this.cartItems = this.cartItems.filter(item => itemToRemove.id !== item.id);
             },
         }
     });

@@ -59,7 +59,7 @@
                                         <h6>{{ item.title }}</h6>
                                     </div>
                                     <div class="col-md-3 text-right">
-                                        <span class="text-muted">{{ item.unitPrice }} €</span>
+                                        <span class="text-muted">{{ item.unitPrice.toFixed(2) }} €</span>
                                     </div>
                                     <div class="col-md-1 text-right">
                                         <a href="#" class="text-danger" @click="removeFromCart(item)"><i class="fa fa-remove"></i></a>
@@ -77,7 +77,7 @@
                                         <h6><strong>Total</strong></h6>
                                     </div>
                                     <div class="col-5 text-right">
-                                        <span><strong>{{ cartTotal }} €</strong></span>
+                                        <span><strong>{{ cartTotal.toFixed(2) }} €</strong></span>
                                     </div>
                                 </div>
                             </li>
@@ -95,19 +95,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="lastName">Nom</label>
-                                    <input type="text" class="form-control" id="lastName">
+                                    <input type="text" class="form-control" id="lastName" v-model="contact.lastName">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="firstName">Prénom</label>
-                                    <input type="text" class="form-control" id="firstName">
+                                    <input type="text" class="form-control" id="firstName" v-model="contact.firstName">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="address">Adresse</label>
-                                    <input type="text" class="form-control" id="address">
+                                    <input type="text" class="form-control" id="address" v-model="contact.address">
                                 </div>
                             </div>
                         </div>
@@ -115,16 +115,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="zipCode">Code postal</label>
-                                    <input type="text" class="form-control" id="zipCode">
+                                    <input type="text" class="form-control" id="zipCode" v-model="contact.zipCode">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="country">Pays</label>
-                                    <select id="country" class="form-control">
-                                        <option v-for="country in countries">France</option>
-                                        <option v-for="country in countries">Germany</option>
-                                        <option v-for="country in countries">Portugal</option>
+                                    <select id="country" class="form-control" v-model="contact.country">
+                                        <option v-for="country in countries" :value="country">{{ country.name }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -136,7 +134,7 @@
         </div>
         <div class="row p-3">
             <div class="col-md-12">
-                <button type="button" class="btn btn-lg btn-block btn-primary">Payer !</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary" disabled>Payer !</button>
             </div>
         </div>
     </div>
