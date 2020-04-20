@@ -33,15 +33,15 @@
     <div class="container" id="app">
         <div class="row p-3">
             <div class="col-md-6">
-                <catalog></catalog>
+                <catalog :categories="categories" @add-to-cart="addToCart"></catalog>
             </div>
             <div class="col-md-6">
-                <cart></cart>
+                <cart :cart="cart"></cart>
             </div>
         </div>
         <div class="row p-3">
             <div class="col-md-12">
-                <contact></contact>
+                <contact :countries="countries" @on-contact-changed="onContactChanged"></contact>
             </div>
         </div>
         <div class="row p-3">
