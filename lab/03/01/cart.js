@@ -1,7 +1,7 @@
 const cart = {
 
     props: {
-        // TO BE IMPLEMENTED
+        cart: Object,
     },
 
     computed: {

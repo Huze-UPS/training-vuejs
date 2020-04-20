@@ -7,7 +7,7 @@ const catalog = {
     },
 
     props: {
-        // TO BE IMPLEMENTED
+        categories: Array,
     },
 
     computed: {
@@ -25,7 +25,7 @@ const catalog = {
     methods: {
 
         emitAddToCart: function() {
-            // TO BE IMPLEMENTED
+            this.$emit('add-to-cart', this.itemSelected);
         },
     },
 
