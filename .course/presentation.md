@@ -260,7 +260,7 @@ La différence entre les 2 DOMs est calculée et appliquée en 1 fois au vérita
 
 #### Inclure la librairie Vue.js dans une page Web
 
-```html
+```vue
 <!DOCTYPE html>
 <html>
 
@@ -283,7 +283,7 @@ La différence entre les 2 DOMs est calculée et appliquée en 1 fois au vérita
 
 #### Instancier Vue.js
 
-```html
+```vue
 <!DOCTYPE html>
 <html>
 
@@ -316,7 +316,7 @@ La différence entre les 2 DOMs est calculée et appliquée en 1 fois au vérita
 
 #### Ajouter de la donnée
 
-```html
+```vue
 <!DOCTYPE html>
 <html>
     <head>
@@ -385,7 +385,7 @@ vue ui
 
 Permet de transformer des fichiers .vue en code JavaScript interprétable par le navigateur
 
-```html
+```vue
 <!-- Exemple de composant myComponent.vue -->
 
 <!-- Template du composant -->
@@ -421,7 +421,7 @@ Permet de transformer des fichiers .vue en code JavaScript interprétable par le
 #### Syntaxe "Moustache"
 [{{ }}](https://vuejs.org/v2/guide/syntax.html#Interpolations)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#myFirstVueApp',
@@ -459,7 +459,7 @@ Un attribut HTML compréhensible par Vue.js
 
 Il est préfixé par `v-`
 
-```html
+```vue
 <!-- Exemples de directives -->
 
 <span v-show="toBeVisible">
@@ -476,7 +476,7 @@ Il est préfixé par `v-`
 #### Binder un attribut
 [`v-bind`](https://vuejs.org/v2/api/#v-bind)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -490,16 +490,16 @@ Il est préfixé par `v-`
 <div id="app">
 
     <!-- A ne pas faire... CA NE MARCHE PAS !! ;) -->
-    <!-- Il n'est pas possible d'utiliser la syntaxe mutache dans un attribut HTML -->
+    <!-- Il n'est pas possible d'utiliser la syntaxe mustache dans un attribut HTML -->
     <span title="{{ mySuperTitle }}">
 
 
     <!-- Il faut utiliser la directive v-bind:$attribut à la place -->
-    <span v-bind:title="toBeVisible">
+    <span v-bind:title="mySuperTitle">
 
 
     <!-- v-bind peut être écrit avec la syntaxe abrégée :$attribut  -->
-    <span :title="toBeVisible">
+    <span :title="mySuperTitle">
 
 </div>
 ```
@@ -509,7 +509,7 @@ Il est préfixé par `v-`
 #### Binder des attributs de style
 [`class and style binding`](https://vuejs.org/v2/guide/class-and-style.html)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -543,7 +543,7 @@ Il est préfixé par `v-`
 [`v-show`](https://vuejs.org/v2/api/#v-show)
 
 
-```html
+```vue
 <script>
 
 const app = new Vue({
@@ -573,7 +573,7 @@ const app = new Vue({
 [`v-else`](https://vuejs.org/v2/api/#v-else)
 [`v-else-if`](https://vuejs.org/v2/api/#v-else-if)
 
-```html
+```vue
 <script>
 
 const app = new Vue({
@@ -608,7 +608,7 @@ const app = new Vue({
 #### Afficher une liste d'éléments
 [`v-for`](https://vuejs.org/v2/api/#v-for)
 
-```html
+```vue
 <script>
 
 const app = new Vue({
@@ -642,7 +642,7 @@ const app = new Vue({
 #### Afficher du HTML
 [`v-html`](https://vuejs.org/v2/api/#v-html)
 
-```html
+```vue
 <script>
 
 const app = new Vue({
@@ -758,7 +758,7 @@ const app = new Vue({
 #### L'instance et son contexte réactif
 [vue instance](https://vuejs.org/v2/guide/instance.html)
 
-```html
+```vue
 <script>
 const app = new Vue({ // 1 instance de Vue est créé et assignée à la variable app
     el: '#app',
@@ -794,7 +794,7 @@ app.noWayImNotReactive = 'Hello???';
 
 Comment faire si je veux afficher le message avec la 1ère lettre en majuscule ?
 
-```html
+```vue
 <script>
 
     const app = new Vue({
@@ -819,7 +819,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les propriétés calculées
 [computed](https://vuejs.org/v2/guide/computed.html)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -836,8 +836,8 @@ Il faut éviter de mettre trop de logique dans les templates !
     });
 
     // Peut être accédée comme une propriété standard mais ne peut pas être modifiée
-    console.log(app.computed);      // Output -> 'Hello world!'
-    app.computed = 'Surprise';      // Renvoie une Erreur
+    console.log(app.messageCapitalized);    // Output -> 'Hello world!'
+    app.messageCapitalized = 'Surprise';              // Renvoie une Erreur
 
     // Si message est modifié, l'affichage de messageCapitalized va être mis à jour
     app.message = 'Coucou le monde !';
@@ -853,7 +853,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les propriétés calculées avec setter
 [computed setter](https://vuejs.org/v2/guide/computed.html#Computed-Setter)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -888,7 +888,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les Observateurs
 [watchers](https://vuejs.org/v2/guide/computed.html#Watchers)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -907,7 +907,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 </script>
 
 <div id="app">
-    <span>{{ fullName }}</span>
+    <span>{{ message }}</span>
 </div>
 ```
 
@@ -916,7 +916,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les méthodes
 [methods](https://vuejs.org/v2/api/#methods)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -924,14 +924,14 @@ Il faut éviter de mettre trop de logique dans les templates !
 
         methods: {
 
-            doSomethingWeird() {
+            doSomethingWeird: function() {
 
                 // this référence l'application app
                 myWeirdApi.run(this.weird);
 
-            }
+            },
 
-            saveUser(user) {
+            saveUser: function(user) {
 
                 myUserApi.save(user);
 
@@ -940,7 +940,7 @@ Il faut éviter de mettre trop de logique dans les templates !
     });
 </script>
 
-<div id="app"><span>{{ fullName }}</span></div>
+<div id="app"><button @click="doSomethingWeird()">Click me!</button></div>
 ```
 
 --
@@ -952,7 +952,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Ecouter des événements
 [v-on](https://vuejs.org/v2/api/#v-on)
 
-```html
+```vue
 <script>
     const app = new Vue({ el: '#app' });
 </script>
@@ -976,7 +976,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Appeler un handler
 [v-on handler](https://vuejs.org/v2/guide/events.html#Method-Event-Handlers)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1009,7 +1009,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Syntaxe courte
 [@](https://vuejs.org/v2/api/#v-on)
 
-```html
+```vue
 <script>
     const app = new Vue({ el: '#app' });
 </script>
@@ -1030,7 +1030,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les modificateurs
 [modifiers](https://vuejs.org/v2/guide/events.html#Event-Modifiers)
 
-```html
+```vue
 <script>
     const app = new Vue({ el: '#app' });
 </script>
@@ -1054,7 +1054,7 @@ Il faut éviter de mettre trop de logique dans les templates !
         .once est un modifier
         l'événement sera déclenché (au plus) 1 fois
     -->
-    <button @click.prevent="alert('Hello!')">Click me!</button>
+    <button @click.once="alert('Hello!')">Click me!</button>
 
 </div>
 ```
@@ -1064,7 +1064,7 @@ Il faut éviter de mettre trop de logique dans les templates !
 #### Les événements du clavier
 [keyboard modifiers](https://vuejs.org/v2/guide/events.html#Key-Modifiers)
 
-```html
+```vue
 <script>
     const app = new Vue({ el: '#app' });
 </script>
@@ -1105,7 +1105,7 @@ right
 #### Les événements de la souris
 [mouse modifiers](https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers)
 
-```html
+```vue
 <script>
     const app = new Vue({ el: '#app' });
 </script>
@@ -1135,7 +1135,7 @@ right
 
 #### Sans binding bidirectionnel...
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1155,9 +1155,9 @@ right
 
     <!--
         Binding data.myValue -> input.value
-        Event input.change -> updateMyValue
+        Event input.change   -> updateMyValue
     -->
-    <input type="text" :value="myValue" @input="updateMyValue($event)">
+    <input type="text" :value="myValue" @input="updateMyValue">
 
 </div>
 ```
@@ -1166,7 +1166,8 @@ right
 
 #### Avec binding bidirectionnel...
 [v-model](https://vuejs.org/v2/api/#v-model)
-```html
+
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1187,10 +1188,10 @@ right
     <!--
         v-model fonctionne pour les éléments :
 
-            - <input type="text"> (propriété value / événement input)
+            - <input type="text">     (propriété value / événement input)
             - <input type="checkbox"> (propriété checked / événement change)
-            - <textarea> (propriété value / événement input)
-            - <select> (propriété value / événement change)
+            - <textarea>              (propriété value / événement input)
+            - <select>                (propriété value / événement change)
     -->
 
 </div>
@@ -1200,7 +1201,7 @@ right
 
 #### Binding bidirectionnel Text
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1214,7 +1215,7 @@ right
 
     <input type="text" v-model="myValue">
 
-    <textarea v-model="myValue"><.textarea>
+    <textarea v-model="myValue"><textarea>
 
 </div>
 ```
@@ -1223,7 +1224,7 @@ right
 
 #### Binding bidirectionnel Case à cocher
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1245,7 +1246,7 @@ right
 
 #### Binding bidirectionnel Groupe de Cases à cocher
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1269,7 +1270,7 @@ right
 
 #### Binding bidirectionnel Boutons Radio
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1293,7 +1294,7 @@ right
 
 #### Binding bidirectionnel Liste de choix
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1317,9 +1318,43 @@ right
 
 --
 
+#### Binding bidirectionnel Liste de choix (custom value)
+
+```vue
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            myValues: [
+                { code: 'A', display: 'A is awesome' },
+                { code: 'B', display: 'B is awesome' },
+                { code: 'C', display: 'C is awesome' }
+            ],
+            myValue: { code: 'A', value: 'A is awesome' },
+        },
+    });
+</script>
+
+<div id="app">
+
+    <select v-model="myValue">
+        <!--
+            La propriété display est affichée
+            La valeur du select est l'object complet
+            (avec propriétés code & display)
+        -->
+        <option v-for="value in values" :value="value">{{ value.display}}</option>
+
+    </select>
+
+</div>
+```
+
+--
+
 #### Binding bidirectionnel Liste de choix multivaluée
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1350,7 +1385,7 @@ right
 #### Créer un filtre
 [a | b](https://vuejs.org/v2/guide/filters.html)
 
-```html
+```vue
 <script>
     const app = new Vue({
         el: '#app',
@@ -1516,7 +1551,7 @@ const myComponent = {
 #### Enregistrer et Utiliser un composant
 [registration](https://vuejs.org/v2/guide/components-registration.html)
 
-```html
+```vue
 <!DOCTYPE html>
 <html>
     <head>
@@ -1564,7 +1599,7 @@ Ils possèdent donc leurs propres \
 
 #### Réutiliser un composant
 
-```html
+```vue
 <!DOCTYPE html>
 <html>
     <head>
@@ -1600,7 +1635,7 @@ Ils possèdent donc leurs propres \
 
 Les composants peuvent être imbriqués
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1635,7 +1670,7 @@ Les composants peuvent être imbriqués
 #### Enregistrer un composant global (utilisable partout)
 [global](https://vuejs.org/v2/guide/components-registration.html#Global-Registration)
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1672,7 +1707,7 @@ Les composants peuvent être imbriqués
 
 #### Passer des propriétés à un composant
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1707,7 +1742,7 @@ Les composants peuvent être imbriqués
 
 #### Passer des propriétés dynamiques
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1741,7 +1776,7 @@ Les composants peuvent être imbriqués
 
 #### Typer les propriétés
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1775,7 +1810,7 @@ Les composants peuvent être imbriqués
 
 #### Valider les propriétés
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1828,7 +1863,7 @@ Les composants peuvent être imbriqués
 #### Emettre des événements depuis un Composant
 [$emit](https://vuejs.org/v2/api/#vm-emit)
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1861,7 +1896,7 @@ Rien ne change...
 on utilise toujours
 [v-on](https://vuejs.org/v2/api/#v-on) !
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1884,7 +1919,7 @@ on utilise toujours
     <body>
         <div id="app">
             <my-component v-on:my-custom-event="displayMessage"></my-component>
-            <my-component      my-custom-event="displayMessage"></my-component>
+            <my-component     @my-custom-event="displayMessage"></my-component>
         </div>
     </body>
 </html>
@@ -1908,7 +1943,7 @@ un composant générique **Contact** affiche le nom et le prénom \
 et peut afficher des propriétés "custom" \
 en fonction de son utilisation
 
-```html
+```vue
 <!-- Dans certains cas, on veut afficher l'adresse-->
 <div id="contact1">
     <input name="firstName">
@@ -1937,7 +1972,7 @@ On fait comment ?
 
 #### Créer un composant avec un slot
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -1967,7 +2002,7 @@ On fait comment ?
 
 #### Utiliser un composant avec un slot
 
-```html
+```vue
 <body>
     <div id="app">
         <my-component>
@@ -1989,7 +2024,7 @@ On fait comment ?
 
 #### Fournir une valeur par défaut pour le slot
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -2022,7 +2057,7 @@ On fait comment ?
 #### Définir un composant avec plusieurs slots
 [named slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots)
 
-```html
+```vue
 <html>
     <head>
         <script>
@@ -2052,7 +2087,7 @@ On fait comment ?
 #### Utiliser un composant avec plusieurs slots
 [v-slot](https://vuejs.org/v2/api/#v-slot)
 
-```html
+```vue
 <base-layout>
     <template v-slot:header>
         <h1>Here might be a page title</h1>
@@ -2265,7 +2300,7 @@ console.log(
 
 ### Optimisation navigateur
 
-```html
+```vue
 <!--
     Autant de requêtes HTTP que de scripts
     Chaque composant est un script composé de bytes inutiles (espaces, tabulations...)
@@ -2710,6 +2745,498 @@ vue create hello-world
 
 
 5. Supprimer le composant HelloWorld de la page
+
+---
+
+## Module 05
+### La navigation & les Tests
+
+--
+
+### La gestion de la navigation
+
+--
+
+#### La problématique
+
+<img src="images/router.png">
+
+Dans 1 SPA, il y a 1 seul document HTML !
+
+--
+
+#### Les URLs et les Fragments
+
+Dans 1 SPA, il y a 1 seul document HTML...
+
+Pour éviter que le navigateur recharge les pages
+
+on utilise des **fragments**
+
+- https://acme.org/#/catalog
+- https://acme.org/#/cart
+- https://acme.org/#/signin
+
+
+--
+
+### [Vue-Router](https://router.vuejs.org/)
+Le routeur officiel pour Vue.js
+
+--
+
+#### Ajouter le routeur a une application Vue.js
+
+##### Dans une page HTML
+```html
+<script src="https://unpkg.com/vue"></script>
+
+<!-- Vue Router doit être inclus après Vue.js -->
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+```
+
+##### Ou avec un système de build
+
+```bash
+npm install vue-router
+```
+
+```javascript
+import Vue from 'vue';
+
+// Vue Router doit être importé après Vue.js
+import VueRouter from 'vue-router';
+
+// Il faut indiquer à Vue.js d'utiliser le routeur
+Vue.use(VueRouter);
+```
+
+--
+
+#### Attacher le routeur à un élément HTML
+[router-view](https://router.vuejs.org/api/#router-view)
+
+```html
+<div id="app">
+    
+    <h1>Hello App!</h1>
+
+    <div id="footer">...</div>
+
+    <!-- Le routeur va rendre les "vues" ici -->
+    <router-view></router-view>
+
+    <div id="footer">...</div>
+</div>
+```
+
+--
+
+#### Définir des routes et attacher le routeur à l'application
+[routes](https://router.vuejs.org/api/#routes)
+
+```javascript
+// On importe les composants Vue.js souhaités
+import Page1 from './pages/Page1.vue';
+import Page2 from './pages/Page2.vue';
+import Page3 from './pages/Page2.vue';
+
+// On associe les composants aux routes (URI Http)
+const myRoutes = [
+  { path: '/page1', name: 'page1', component: Page1 },
+  { path: '/page2', name: 'page2', component: Page2 },
+  { path: '/page3', name: 'page3', component: Page3 },
+];
+
+// On créé une instance de Routeur en passant les routes
+const myRouter = new VueRouter({
+  routes: myRoutes,
+});
+
+const app = new Vue({
+
+    // A la création de l'instance Vue.js, on attache le routeur
+    router: myRouter,
+
+}).$mount('#app');
+```
+
+--
+
+#### Accéder aux informations du routeur depuis les composants
+
+```javascript
+// Tous les composants peuvent accéder au router avec la propriété $router
+this.$router;
+
+// Tous les composants peuvent accéder à la route active avec la propriété $route
+this.$route;
+```
+
+--
+
+#### Les routes dynamiques
+[/route/:dynamic](https://router.vuejs.org/guide/essentials/dynamic-matching.html)
+
+```javascript
+const router = new VueRouter({
+
+    routes: [
+    
+        // La route va matcher /user/0, /user/1...
+        { path: '/user/:id', component: User }
+
+    ]
+});
+```
+
+--
+
+#### Les propriétés des Routes
+[route properties](https://router.vuejs.org/api/#route-object-properties)
+
+```md
+- path  : le chemin de la route      (/page1)
+- name  : le nom de la route         (optionnel)
+- params: les paramètres de la route (/user/123)
+- query : les query params           (?a=1&b=2)
+
+
+- Exemple
+
+    - Route = /categories/:category/items/:item
+
+
+    - https://acme.com/#/categories/123/items/456?sort=asc&new=true
+
+        - $route.path   => /categories/123/items/456
+        - $route.params => { category: '123', item: '456' }
+        - $route.query  => { sort: 'asc',     new: 'true' }
+```
+
+--
+
+#### Ordre d'évaluation des routes
+[404](https://router.vuejs.org/guide/essentials/dynamic-matching.html#catch-all-404-not-found-route)
+
+```javascript
+// Les routes sont évaluées dans l'ordre
+const myRoutes = [
+  { path: '/page1', component: Page1 },
+  { path: '/page2', component: Page2 },
+  { path: '*',      component: PageNotFound }, // * va matcher toutes les routes
+];
+
+// Si /page1 -> Page1
+// Si /page2 -> Page2
+// Si /page3 -> PageNotFound
+```
+
+--
+
+#### Routes imbriquées
+
+```javascript
+// Composant User avec son propre <router-view>
+const User = {
+  template: `
+    <div class="user">
+      <h2>User {{ $route.params.id }}</h2>
+      <router-view></router-view>
+    </div>
+  `
+};
+
+const router = new VueRouter({
+  routes: [
+    { path: '/user/:id', component: User,
+      children: [
+        
+        // UserProfile sera rendu dans le <router-view> de User
+        // quand url = /user/:id/profile
+        { path: 'profile', component: UserProfile },
+
+        // UserPosts sera rendu dans <router-view> de User
+        // quand url = /user/:id/posts
+        { path: 'posts', component: UserPosts },
+
+      ]
+    }
+  ]
+});
+```
+
+--
+
+#### Gérer la navigation dans les templates
+[router-link](https://router.vuejs.org/api/#router-link)
+
+```vue
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- le router-link sera rendu comme un <a href=""> -->
+    <router-link to="/page1">Go to Page1</router-link>
+    <router-link to="/page2">Go to Page2</router-link>
+  </p>
+
+  <router-view></router-view>
+</div>
+```
+
+--
+
+#### Gérer la navigation en JavaScript
+[programmatic navigation](https://router.vuejs.org/guide/essentials/navigation.html)
+
+```javascript
+// Dans un composant...
+
+
+// Naviguer vers le chemin /home
+this.$router.push('home')
+
+
+// Naviguer vers la chemin /home (version objet)
+this.$router.push({ path: 'home' })
+
+
+// Naviguer vers le chemin /register avec le query param ?plan=private
+this.$router.push({ path: 'register', query: { plan: 'private' } })
+
+
+// Naviguer vers la route nommée 'user' avec un param userId
+this.$router.push({ name: 'user', params: { userId: '123' } })
+```
+
+--
+
+#### Les contrôles de navigation
+[navigation guards](https://router.vuejs.org/guide/advanced/navigation-guards.html)
+
+```vue
+<script>
+module.exports = {
+    
+    data: function() {return {}},
+
+    beforeRouteEnter (to, from, next) {
+        // Appeler avant de changer la route
+        // Il faut appeler next() pour confirmer la navigation
+    },
+
+    beforeRouteUpdate (to, from, next) {
+        // Appeler quand la route change mais le même composant est affiché
+        // Ex : /user/1 et /user/2
+        // Il faut appeler next() pour confirmer la navigation
+    },
+
+    beforeRouteLeave (to, from, next) {
+        // Appeler quand la navigation va quitter le composant
+        // Il faut appeler next() pour confirmer la navigation
+    }
+}
+</script>
+
+<template>...</template>
+```
+
+--
+
+### Les tests
+
+--
+
+#### Typologie de tests
+
+<img src="images/testing_pyramid.png">
+
+- **Tests Unitaires**
+    - Teste qu'un composant fonctionne unitairement
+- **Tests d'Intégration**
+    - Teste que les composants fonctionnent une fois intégrés
+- **Tests de bout-en-bout**
+    - Teste que le système fonctionne comme attendu par l'Utilisateur
+
+--
+
+#### Pourquoi tester ?
+
+- Une manière de documenter ce que fait le code
+
+- Evite de restester manuellement après chaque changement
+
+- Evite le risque de régression lors d'ajout de fonctionnalités
+
+- Améliore l'architecture du code
+
+- Facilite le refactoring
+
+- ...
+
+--
+
+#### Tester unitairement un composant Vue.js
+
+Nous avons besoin de :
+
+- Un "Test Runner" pour exécuter les tests : [Jest](https://jestjs.io/)
+
+- Une implémentation "mock" du DOM pour node.js : [JsDom](https://github.com/jsdom/jsdom)
+
+- Des facilités pour manipuler les composants : [Vue Test Utils](https://vue-test-utils.vuejs.org/)
+
+--
+
+#### Exemple de Test Unitaire
+
+```vue
+<!-- Exemple de composant Hello.vue -->
+<template>
+    <span>{{ msg }}</span>
+</template>
+
+<script>
+    export default {
+        props: ['msg'],
+    }
+</script>
+```
+
+```javascript
+// Exemple de TU Hello.test.js
+import Hello from './Hello.vue';                 // import du composant
+import { shallowMount } from '@vue/test-utils';  // import fonction utilitaire
+
+// Définit la suite de tests du composant
+describe('Hello', () => {
+
+    // Définit 1 test du composant
+    it('should render as expected when called with prop Hello!', () => {
+        expect(
+            shallowMount(Hello, { propsData: { msg: 'Hello!'} }).text()
+        ).toBe('Hello!');
+    });
+
+    // Définit 1 test du composant
+    it('should render as expected when called with prop Good bye!', () => {
+        expect(
+            shallowMount(Hello, { propsData: { msg: 'Good bye!'} }).text()
+        ).toBe('Good bye!');
+    });
+});
+```
+
+--
+
+#### Tester une application de bout-en-bout
+
+L'objectif est de s'assurer que le comportement est conforme aux attentes de l'Utilisateur.
+
+Il faut donc un véritable navigateur.
+
+Plusieurs frameworks de tests existent et fonctionnent de manière différente :
+- Nightwatch (basé sur Selenium)
+- Cypress
+- TestCafe
+- ...
+
+--
+
+#### Exemple de test E2E avec Cypress
+
+```javascript
+describe('Testing Acme.com', () => {
+    it('Visits the Contact Page', () => {
+        cy.visit( 'https://acme.com');
+        cy.contains('Contact Us').click();
+        cy.url().should('include', '/contact');
+    });
+});
+```
+
+--
+
+### Labs
+
+<img src="images/lab.png">
+
+--
+
+### lab/05/01
+#### Routeur
+
+```md
+1. Sous lab/05/01, installer les dépendances
+    - npm install
+
+
+2. Démarrer l'application
+    - npm run serve
+
+
+3. Ouvrir l'application et naviguer entre les 3 pages
+    - http://localhost:8080/#/page-a
+    - http://localhost:8080/#/page-b
+    - http://localhost:8080/#/page-c
+
+
+4. Ajouter une page "PageD"
+    - Créer le composant sous /pages
+    - Ajouter un lien de navigation dans App.vue
+    - Ajouter une route dans router.js qui match /page-d
+
+
+5. Ajouter dans PageC un <button>Go to PageD</button>
+    - Qui navigue vers PageD quand on clique dessus
+
+
+6. Modifier pour que la route vers PageD contienne un paramètre
+    - Modifier la route pour matcher /page-d/:message
+    - Modifier PageD pour afficher le message passé dans l'URL
+    - Vérifier en appelant http://localhost:8080/#/page-d/hello
+    - Modifier PageC en ajoutant un input qui bind une propriété message
+    - Modifier le bouton de PageC pour naviguer vers PageD avec le message   
+```
+
+--
+
+### lab/05/02
+#### Tests E2E avec Cypress
+
+```md
+1. Sous lab/05/02/app,
+    - installer les dépendances
+        - npm install
+    - lancer l'application
+        - npm start
+    - Vérifier en ouvrant http://localhost:3000 dans le navigateur
+
+
+2. Sous lab/05/02/e2e,
+    - installer les dépendances
+        - npm install
+    - regarder les tests implémentés
+        - dans cypress/integration/app.spec.js
+    - exécuter les tests
+        - npm run cypress:test
+    - Vérifier dans le console que tous les tests dont passés
+
+
+3. Sous lab/05/02/e2e,
+    - lancer le debugger Cypress
+        - npm run cypress:open
+    - dans la fenêtre qui s'est ouverte
+        - choisir le navigateur à utiliser en haut à droite
+        - cliquer sur app.spec.js en haut à gauche
+    - le navigateur s'ouvre et exécute les tests
+
+
+4. Sous lab/05/02/e2e,
+    - modifier les tests et implémenter le test 'Remove book from cart'
+        - supprimer un article du panier
+        - vérifier que le total est correct
+```
 
 ---
 

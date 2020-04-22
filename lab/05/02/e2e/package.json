@@ -1,0 +1,15 @@
+{
+    "name": "e2e",
+    "version": "1.0.0",
+    "description": "E2E tests for Demo App",
+    "main": "index.js",
+    "scripts": {
+        "cypress:open": "./node_modules/.bin/cypress open",
+        "cypress:test": "./node_modules/.bin/cypress run"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "cypress": "^4.4.0"
+    }
+}

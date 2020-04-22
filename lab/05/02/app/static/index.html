@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--
+        Twitter Bootstrap
+        See (https://getbootstrap.com/)
+    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- Data -->
+    <script src="data.js" charset="utf-8"></script>
+
+    <!-- Components -->
+    <script src="catalog.js" charset="utf-8"></script>
+    <script src="contact.js" charset="utf-8"></script>
+    <script src="cart.js" charset="utf-8"></script>
+
+    <!-- App -->
+    <script src="app.js" charset="utf-8"></script>
+
+</head>
+
+<body onload="initApp()" class="bg-light">
+
+    <h2>Lab 05/02</h2>
+
+    <div class="container" id="app">
+        <div class="row p-3">
+            <div class="col-md-6">
+                <catalog :categories="categories" @add-to-cart="addToCart"></catalog>
+            </div>
+            <div class="col-md-6">
+                <cart :cart="cart"></cart>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-md-12">
+                <contact :countries="countries" :contact="contact" @contact-changed="onContactChanged"></contact>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-md-12">
+                <button type="button" id="btnPay" class="btn btn-lg btn-block btn-primary" :disabled="!isPaymentEnabled()" @click="pay">Payer !</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="app"></div>
+
+</body>
+
+</html>

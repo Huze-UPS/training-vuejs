@@ -564,7 +564,7 @@ document.getElementsByClassName(&quot;list&quot;)[0].appendChild(listItemTwo);
         
             <section >
                 <h4><a id="user-content-inclure-la-librairie-vuejs-dans-une-page-web" class="anchor" href="#inclure-la-librairie-vuejs-dans-une-page-web" aria-hidden="true"></a>Inclure la librairie Vue.js dans une page Web</h4>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
     &lt;head&gt;
@@ -586,7 +586,7 @@ document.getElementsByClassName(&quot;list&quot;)[0].appendChild(listItemTwo);
         
             <section >
                 <h4><a id="user-content-instancier-vuejs" class="anchor" href="#instancier-vuejs" aria-hidden="true"></a>Instancier Vue.js</h4>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
     &lt;head&gt;
@@ -618,7 +618,7 @@ document.getElementsByClassName(&quot;list&quot;)[0].appendChild(listItemTwo);
         
             <section >
                 <h4><a id="user-content-ajouter-de-la-donnée" class="anchor" href="#ajouter-de-la-donnée" aria-hidden="true"></a>Ajouter de la donnée</h4>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
@@ -680,7 +680,7 @@ vue ui
                 <h4><a id="user-content-gestion-des-composants-au-format-vue" class="anchor" href="#gestion-des-composants-au-format-vue" aria-hidden="true"></a>Gestion des composants au format <code>.vue</code></h4>
 <p><a href="https://vue-loader.vuejs.org/">vue-loader</a></p>
 <p>Permet de transformer des fichiers .vue en code JavaScript interprétable par le navigateur</p>
-<pre><code class="language-html">&lt;!-- Exemple de composant myComponent.vue --&gt;
+<pre><code class="language-vue">&lt;!-- Exemple de composant myComponent.vue --&gt;
 
 &lt;!-- Template du composant --&gt;
 &lt;template&gt;
@@ -716,7 +716,7 @@ vue ui
             <section >
                 <h4><a id="user-content-syntaxe-moustache" class="anchor" href="#syntaxe-moustache" aria-hidden="true"></a>Syntaxe “Moustache”</h4>
 <p><a href="https://vuejs.org/v2/guide/syntax.html#Interpolations">{{ }}</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#myFirstVueApp',
         data: {
@@ -752,7 +752,7 @@ vue ui
                 <h4><a id="user-content-quest-ce-quune-directive-" class="anchor" href="#quest-ce-quune-directive-" aria-hidden="true"></a>Qu’est-ce qu’une directive ?</h4>
 <p>Un attribut HTML compréhensible par Vue.js</p>
 <p>Il est préfixé par <code>v-</code></p>
-<pre><code class="language-html">&lt;!-- Exemples de directives --&gt;
+<pre><code class="language-vue">&lt;!-- Exemples de directives --&gt;
 
 &lt;span v-show=&quot;toBeVisible&quot;&gt;
 
@@ -768,7 +768,7 @@ vue ui
             <section >
                 <h4><a id="user-content-binder-un-attribut" class="anchor" href="#binder-un-attribut" aria-hidden="true"></a>Binder un attribut</h4>
 <p><a href="https://vuejs.org/v2/api/#v-bind"><code>v-bind</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -781,16 +781,16 @@ vue ui
 &lt;div id=&quot;app&quot;&gt;
 
     &lt;!-- A ne pas faire... CA NE MARCHE PAS !! ;) --&gt;
-    &lt;!-- Il n'est pas possible d'utiliser la syntaxe mutache dans un attribut HTML --&gt;
+    &lt;!-- Il n'est pas possible d'utiliser la syntaxe mustache dans un attribut HTML --&gt;
     &lt;span title=&quot;{{ mySuperTitle }}&quot;&gt;
 
 
     &lt;!-- Il faut utiliser la directive v-bind:$attribut à la place --&gt;
-    &lt;span v-bind:title=&quot;toBeVisible&quot;&gt;
+    &lt;span v-bind:title=&quot;mySuperTitle&quot;&gt;
 
 
     &lt;!-- v-bind peut être écrit avec la syntaxe abrégée :$attribut  --&gt;
-    &lt;span :title=&quot;toBeVisible&quot;&gt;
+    &lt;span :title=&quot;mySuperTitle&quot;&gt;
 
 &lt;/div&gt;
 </code></pre>
@@ -800,7 +800,7 @@ vue ui
             <section >
                 <h4><a id="user-content-binder-des-attributs-de-style" class="anchor" href="#binder-des-attributs-de-style" aria-hidden="true"></a>Binder des attributs de style</h4>
 <p><a href="https://vuejs.org/v2/guide/class-and-style.html"><code>class and style binding</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -832,7 +832,7 @@ vue ui
             <section >
                 <h4><a id="user-content-afficher-un-élément-de-manière-conditionnelle" class="anchor" href="#afficher-un-élément-de-manière-conditionnelle" aria-hidden="true"></a>Afficher un élément de manière conditionnelle</h4>
 <p><a href="https://vuejs.org/v2/api/#v-show"><code>v-show</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 
 const app = new Vue({
     el: '#app',
@@ -861,7 +861,7 @@ const app = new Vue({
 <p><a href="https://vuejs.org/v2/api/#v-if"><code>v-if</code></a>
 <a href="https://vuejs.org/v2/api/#v-else"><code>v-else</code></a>
 <a href="https://vuejs.org/v2/api/#v-else-if"><code>v-else-if</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 
 const app = new Vue({
     el: '#app',
@@ -895,7 +895,7 @@ const app = new Vue({
             <section >
                 <h4><a id="user-content-afficher-une-liste-déléments" class="anchor" href="#afficher-une-liste-déléments" aria-hidden="true"></a>Afficher une liste d’éléments</h4>
 <p><a href="https://vuejs.org/v2/api/#v-for"><code>v-for</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 
 const app = new Vue({
     el: '#app',
@@ -928,7 +928,7 @@ const app = new Vue({
             <section >
                 <h4><a id="user-content-afficher-du-html" class="anchor" href="#afficher-du-html" aria-hidden="true"></a>Afficher du HTML</h4>
 <p><a href="https://vuejs.org/v2/api/#v-html"><code>v-html</code></a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 
 const app = new Vue({
     el: '#app',
@@ -1093,7 +1093,7 @@ const app = new Vue({
             <section >
                 <h4><a id="user-content-linstance-et-son-contexte-réactif" class="anchor" href="#linstance-et-son-contexte-réactif" aria-hidden="true"></a>L’instance et son contexte réactif</h4>
 <p><a href="https://vuejs.org/v2/guide/instance.html">vue instance</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 const app = new Vue({ // 1 instance de Vue est créé et assignée à la variable app
     el: '#app',
 
@@ -1127,7 +1127,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-limites-de-lobjet-data" class="anchor" href="#limites-de-lobjet-data" aria-hidden="true"></a>Limites de l’objet <code>data</code></h4>
 <p>Comment faire si je veux afficher le message avec la 1ère lettre en majuscule ?</p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
 
     const app = new Vue({
         el: '#app',
@@ -1150,7 +1150,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-propriétés-calculées" class="anchor" href="#les-propriétés-calculées" aria-hidden="true"></a>Les propriétés calculées</h4>
 <p><a href="https://vuejs.org/v2/guide/computed.html">computed</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: { message: 'hello world!' },
@@ -1166,8 +1166,8 @@ app.noWayImNotReactive = 'Hello???';
     });
 
     // Peut être accédée comme une propriété standard mais ne peut pas être modifiée
-    console.log(app.computed);      // Output -&gt; 'Hello world!'
-    app.computed = 'Surprise';      // Renvoie une Erreur
+    console.log(app.messageCapitalized);    // Output -&gt; 'Hello world!'
+    app.messageCapitalized = 'Surprise';              // Renvoie une Erreur
 
     // Si message est modifié, l'affichage de messageCapitalized va être mis à jour
     app.message = 'Coucou le monde !';
@@ -1183,7 +1183,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-propriétés-calculées-avec-setter" class="anchor" href="#les-propriétés-calculées-avec-setter" aria-hidden="true"></a>Les propriétés calculées avec setter</h4>
 <p><a href="https://vuejs.org/v2/guide/computed.html#Computed-Setter">computed setter</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: { firstName: 'John', lastName: 'Doe' },
@@ -1217,7 +1217,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-observateurs" class="anchor" href="#les-observateurs" aria-hidden="true"></a>Les Observateurs</h4>
 <p><a href="https://vuejs.org/v2/guide/computed.html#Watchers">watchers</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: { message: 'Hello world!' },
@@ -1235,7 +1235,7 @@ app.noWayImNotReactive = 'Hello???';
 &lt;/script&gt;
 
 &lt;div id=&quot;app&quot;&gt;
-    &lt;span&gt;{{ fullName }}&lt;/span&gt;
+    &lt;span&gt;{{ message }}&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
 
@@ -1244,21 +1244,21 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-méthodes" class="anchor" href="#les-méthodes" aria-hidden="true"></a>Les méthodes</h4>
 <p><a href="https://vuejs.org/v2/api/#methods">methods</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: { weird: 'Weird!' },
 
         methods: {
 
-            doSomethingWeird() {
+            doSomethingWeird: function() {
 
                 // this référence l'application app
                 myWeirdApi.run(this.weird);
 
-            }
+            },
 
-            saveUser(user) {
+            saveUser: function(user) {
 
                 myUserApi.save(user);
 
@@ -1267,7 +1267,7 @@ app.noWayImNotReactive = 'Hello???';
     });
 &lt;/script&gt;
 
-&lt;div id=&quot;app&quot;&gt;&lt;span&gt;{{ fullName }}&lt;/span&gt;&lt;/div&gt;
+&lt;div id=&quot;app&quot;&gt;&lt;button @click=&quot;doSomethingWeird()&quot;&gt;Click me!&lt;/button&gt;&lt;/div&gt;
 </code></pre>
 
             </section>
@@ -1280,7 +1280,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-ecouter-des-événements" class="anchor" href="#ecouter-des-événements" aria-hidden="true"></a>Ecouter des événements</h4>
 <p><a href="https://vuejs.org/v2/api/#v-on">v-on</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({ el: '#app' });
 &lt;/script&gt;
 
@@ -1303,7 +1303,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-appeler-un-handler" class="anchor" href="#appeler-un-handler" aria-hidden="true"></a>Appeler un handler</h4>
 <p><a href="https://vuejs.org/v2/guide/events.html#Method-Event-Handlers">v-on handler</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         methods: {
@@ -1335,7 +1335,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-syntaxe-courte" class="anchor" href="#syntaxe-courte" aria-hidden="true"></a>Syntaxe courte</h4>
 <p><a href="https://vuejs.org/v2/api/#v-on">@</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({ el: '#app' });
 &lt;/script&gt;
 
@@ -1355,7 +1355,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-modificateurs" class="anchor" href="#les-modificateurs" aria-hidden="true"></a>Les modificateurs</h4>
 <p><a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">modifiers</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({ el: '#app' });
 &lt;/script&gt;
 
@@ -1378,7 +1378,7 @@ app.noWayImNotReactive = 'Hello???';
         .once est un modifier
         l'événement sera déclenché (au plus) 1 fois
     --&gt;
-    &lt;button @click.prevent=&quot;alert('Hello!')&quot;&gt;Click me!&lt;/button&gt;
+    &lt;button @click.once=&quot;alert('Hello!')&quot;&gt;Click me!&lt;/button&gt;
 
 &lt;/div&gt;
 </code></pre>
@@ -1388,7 +1388,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-événements-du-clavier" class="anchor" href="#les-événements-du-clavier" aria-hidden="true"></a>Les événements du clavier</h4>
 <p><a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">keyboard modifiers</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({ el: '#app' });
 &lt;/script&gt;
 
@@ -1416,7 +1416,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-les-événements-de-la-souris" class="anchor" href="#les-événements-de-la-souris" aria-hidden="true"></a>Les événements de la souris</h4>
 <p><a href="https://vuejs.org/v2/guide/events.html#Mouse-Button-Modifiers">mouse modifiers</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({ el: '#app' });
 &lt;/script&gt;
 
@@ -1446,7 +1446,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-sans-binding-bidirectionnel" class="anchor" href="#sans-binding-bidirectionnel" aria-hidden="true"></a>Sans binding bidirectionnel…</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1465,9 +1465,9 @@ app.noWayImNotReactive = 'Hello???';
 
     &lt;!--
         Binding data.myValue -&gt; input.value
-        Event input.change -&gt; updateMyValue
+        Event input.change   -&gt; updateMyValue
     --&gt;
-    &lt;input type=&quot;text&quot; :value=&quot;myValue&quot; @input=&quot;updateMyValue($event)&quot;&gt;
+    &lt;input type=&quot;text&quot; :value=&quot;myValue&quot; @input=&quot;updateMyValue&quot;&gt;
 
 &lt;/div&gt;
 </code></pre>
@@ -1477,7 +1477,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-avec-binding-bidirectionnel" class="anchor" href="#avec-binding-bidirectionnel" aria-hidden="true"></a>Avec binding bidirectionnel…</h4>
 <p><a href="https://vuejs.org/v2/api/#v-model">v-model</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1497,10 +1497,10 @@ app.noWayImNotReactive = 'Hello???';
     &lt;!--
         v-model fonctionne pour les éléments :
 
-            - &lt;input type=&quot;text&quot;&gt; (propriété value / événement input)
+            - &lt;input type=&quot;text&quot;&gt;     (propriété value / événement input)
             - &lt;input type=&quot;checkbox&quot;&gt; (propriété checked / événement change)
-            - &lt;textarea&gt; (propriété value / événement input)
-            - &lt;select&gt; (propriété value / événement change)
+            - &lt;textarea&gt;              (propriété value / événement input)
+            - &lt;select&gt;                (propriété value / événement change)
     --&gt;
 
 &lt;/div&gt;
@@ -1510,7 +1510,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-binding-bidirectionnel-text" class="anchor" href="#binding-bidirectionnel-text" aria-hidden="true"></a>Binding bidirectionnel Text</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1523,7 +1523,7 @@ app.noWayImNotReactive = 'Hello???';
 
     &lt;input type=&quot;text&quot; v-model=&quot;myValue&quot;&gt;
 
-    &lt;textarea v-model=&quot;myValue&quot;&gt;&lt;.textarea&gt;
+    &lt;textarea v-model=&quot;myValue&quot;&gt;&lt;textarea&gt;
 
 &lt;/div&gt;
 </code></pre>
@@ -1532,7 +1532,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-binding-bidirectionnel-case-à-cocher" class="anchor" href="#binding-bidirectionnel-case-à-cocher" aria-hidden="true"></a>Binding bidirectionnel Case à cocher</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1553,7 +1553,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-binding-bidirectionnel-groupe-de-cases-à-cocher" class="anchor" href="#binding-bidirectionnel-groupe-de-cases-à-cocher" aria-hidden="true"></a>Binding bidirectionnel Groupe de Cases à cocher</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1576,7 +1576,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-binding-bidirectionnel-boutons-radio" class="anchor" href="#binding-bidirectionnel-boutons-radio" aria-hidden="true"></a>Binding bidirectionnel Boutons Radio</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1599,7 +1599,7 @@ app.noWayImNotReactive = 'Hello???';
         
             <section >
                 <h4><a id="user-content-binding-bidirectionnel-liste-de-choix" class="anchor" href="#binding-bidirectionnel-liste-de-choix" aria-hidden="true"></a>Binding bidirectionnel Liste de choix</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1623,8 +1623,41 @@ app.noWayImNotReactive = 'Hello???';
             </section>
         
             <section >
+                <h4><a id="user-content-binding-bidirectionnel-liste-de-choix-custom-value" class="anchor" href="#binding-bidirectionnel-liste-de-choix-custom-value" aria-hidden="true"></a>Binding bidirectionnel Liste de choix (custom value)</h4>
+<pre><code class="language-vue">&lt;script&gt;
+    const app = new Vue({
+        el: '#app',
+        data: {
+            myValues: [
+                { code: 'A', display: 'A is awesome' },
+                { code: 'B', display: 'B is awesome' },
+                { code: 'C', display: 'C is awesome' }
+            ],
+            myValue: { code: 'A', value: 'A is awesome' },
+        },
+    });
+&lt;/script&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+
+    &lt;select v-model=&quot;myValue&quot;&gt;
+        &lt;!--
+            La propriété display est affichée
+            La valeur du select est l'object complet
+            (avec propriétés code &amp; display)
+        --&gt;
+        &lt;option v-for=&quot;value in values&quot; :value=&quot;value&quot;&gt;{{ value.display}}&lt;/option&gt;
+
+    &lt;/select&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+            </section>
+        
+            <section >
                 <h4><a id="user-content-binding-bidirectionnel-liste-de-choix-multivaluée" class="anchor" href="#binding-bidirectionnel-liste-de-choix-multivaluée" aria-hidden="true"></a>Binding bidirectionnel Liste de choix multivaluée</h4>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: {
@@ -1655,7 +1688,7 @@ app.noWayImNotReactive = 'Hello???';
             <section >
                 <h4><a id="user-content-créer-un-filtre" class="anchor" href="#créer-un-filtre" aria-hidden="true"></a>Créer un filtre</h4>
 <p><a href="https://vuejs.org/v2/guide/filters.html">a | b</a></p>
-<pre><code class="language-html">&lt;script&gt;
+<pre><code class="language-vue">&lt;script&gt;
     const app = new Vue({
         el: '#app',
         data: { myValue: 'hello world!' },
@@ -1823,7 +1856,7 @@ const myComponent = {
             <section >
                 <h4><a id="user-content-enregistrer-et-utiliser-un-composant" class="anchor" href="#enregistrer-et-utiliser-un-composant" aria-hidden="true"></a>Enregistrer et Utiliser un composant</h4>
 <p><a href="https://vuejs.org/v2/guide/components-registration.html">registration</a></p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
@@ -1869,7 +1902,7 @@ const myComponent = {
         
             <section >
                 <h4><a id="user-content-réutiliser-un-composant" class="anchor" href="#réutiliser-un-composant" aria-hidden="true"></a>Réutiliser un composant</h4>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-vue">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
@@ -1903,7 +1936,7 @@ const myComponent = {
             <section >
                 <h4><a id="user-content-enregistrer-un-sous-composant" class="anchor" href="#enregistrer-un-sous-composant" aria-hidden="true"></a>Enregistrer un sous-composant</h4>
 <p>Les composants peuvent être imbriqués</p>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyNestedComponent = { template: '&lt;p&gt;Nested!!!&lt;/p&gt;' };
@@ -1937,7 +1970,7 @@ const myComponent = {
             <section >
                 <h4><a id="user-content-enregistrer-un-composant-global-utilisable-partout" class="anchor" href="#enregistrer-un-composant-global-utilisable-partout" aria-hidden="true"></a>Enregistrer un composant global (utilisable partout)</h4>
 <p><a href="https://vuejs.org/v2/guide/components-registration.html#Global-Registration">global</a></p>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
 
@@ -1974,7 +2007,7 @@ const myComponent = {
         
             <section >
                 <h4><a id="user-content-passer-des-propriétés-à-un-composant" class="anchor" href="#passer-des-propriétés-à-un-composant" aria-hidden="true"></a>Passer des propriétés à un composant</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2008,7 +2041,7 @@ const myComponent = {
         
             <section >
                 <h4><a id="user-content-passer-des-propriétés-dynamiques" class="anchor" href="#passer-des-propriétés-dynamiques" aria-hidden="true"></a>Passer des propriétés dynamiques</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2041,7 +2074,7 @@ const myComponent = {
         
             <section >
                 <h4><a id="user-content-typer-les-propriétés" class="anchor" href="#typer-les-propriétés" aria-hidden="true"></a>Typer les propriétés</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2074,7 +2107,7 @@ const myComponent = {
         
             <section >
                 <h4><a id="user-content-valider-les-propriétés" class="anchor" href="#valider-les-propriétés" aria-hidden="true"></a>Valider les propriétés</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2134,7 +2167,7 @@ const myComponent = {
             <section >
                 <h4><a id="user-content-emettre-des-événements-depuis-un-composant" class="anchor" href="#emettre-des-événements-depuis-un-composant" aria-hidden="true"></a>Emettre des événements depuis un Composant</h4>
 <p><a href="https://vuejs.org/v2/api/#vm-emit">$emit</a></p>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2164,7 +2197,7 @@ const myComponent = {
 <p>Rien ne change…
 on utilise toujours
 <a href="https://vuejs.org/v2/api/#v-on">v-on</a> !</p>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2186,7 +2219,7 @@ on utilise toujours
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
             &lt;my-component v-on:my-custom-event=&quot;displayMessage&quot;&gt;&lt;/my-component&gt;
-            &lt;my-component      my-custom-event=&quot;displayMessage&quot;&gt;&lt;/my-component&gt;
+            &lt;my-component     @my-custom-event=&quot;displayMessage&quot;&gt;&lt;/my-component&gt;
         &lt;/div&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -2209,7 +2242,7 @@ on utilise toujours
 <p>un composant générique <strong>Contact</strong> affiche le nom et le prénom <br>
 et peut afficher des propriétés “custom” <br>
 en fonction de son utilisation</p>
-<pre><code class="language-html">&lt;!-- Dans certains cas, on veut afficher l'adresse--&gt;
+<pre><code class="language-vue">&lt;!-- Dans certains cas, on veut afficher l'adresse--&gt;
 &lt;div id=&quot;contact1&quot;&gt;
     &lt;input name=&quot;firstName&quot;&gt;
     &lt;input name=&quot;lastName&quot;&gt;
@@ -2236,7 +2269,7 @@ en fonction de son utilisation</p>
         
             <section >
                 <h4><a id="user-content-créer-un-composant-avec-un-slot" class="anchor" href="#créer-un-composant-avec-un-slot" aria-hidden="true"></a>Créer un composant avec un slot</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2265,7 +2298,7 @@ en fonction de son utilisation</p>
         
             <section >
                 <h4><a id="user-content-utiliser-un-composant-avec-un-slot" class="anchor" href="#utiliser-un-composant-avec-un-slot" aria-hidden="true"></a>Utiliser un composant avec un slot</h4>
-<pre><code class="language-html">&lt;body&gt;
+<pre><code class="language-vue">&lt;body&gt;
     &lt;div id=&quot;app&quot;&gt;
         &lt;my-component&gt;
 
@@ -2286,7 +2319,7 @@ en fonction de son utilisation</p>
         
             <section >
                 <h4><a id="user-content-fournir-une-valeur-par-défaut-pour-le-slot" class="anchor" href="#fournir-une-valeur-par-défaut-pour-le-slot" aria-hidden="true"></a>Fournir une valeur par défaut pour le slot</h4>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2318,7 +2351,7 @@ en fonction de son utilisation</p>
             <section >
                 <h4><a id="user-content-définir-un-composant-avec-plusieurs-slots" class="anchor" href="#définir-un-composant-avec-plusieurs-slots" aria-hidden="true"></a>Définir un composant avec plusieurs slots</h4>
 <p><a href="https://vuejs.org/v2/guide/components-slots.html#Named-Slots">named slots</a></p>
-<pre><code class="language-html">&lt;html&gt;
+<pre><code class="language-vue">&lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             const MyComponent = {
@@ -2347,7 +2380,7 @@ en fonction de son utilisation</p>
             <section >
                 <h4><a id="user-content-utiliser-un-composant-avec-plusieurs-slots" class="anchor" href="#utiliser-un-composant-avec-plusieurs-slots" aria-hidden="true"></a>Utiliser un composant avec plusieurs slots</h4>
 <p><a href="https://vuejs.org/v2/api/#v-slot">v-slot</a></p>
-<pre><code class="language-html">&lt;base-layout&gt;
+<pre><code class="language-vue">&lt;base-layout&gt;
     &lt;template v-slot:header&gt;
         &lt;h1&gt;Here might be a page title&lt;/h1&gt;
     &lt;/template&gt;
@@ -2558,7 +2591,7 @@ console.log(
         
             <section >
                 <h3><a id="user-content-optimisation-navigateur" class="anchor" href="#optimisation-navigateur" aria-hidden="true"></a>Optimisation navigateur</h3>
-<pre><code class="language-html">&lt;!--
+<pre><code class="language-vue">&lt;!--
     Autant de requêtes HTTP que de scripts
     Chaque composant est un script composé de bytes inutiles (espaces, tabulations...)
 --&gt;
@@ -2963,6 +2996,508 @@ npm install -g @vue/cli
 
 
 5. Supprimer le composant HelloWorld de la page</code></pre>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-module-05" class="anchor" href="#module-05" aria-hidden="true"></a>Module 05</h2>
+<h3><a id="user-content-la-navigation--les-tests" class="anchor" href="#la-navigation--les-tests" aria-hidden="true"></a>La navigation &amp; les Tests</h3>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-la-gestion-de-la-navigation" class="anchor" href="#la-gestion-de-la-navigation" aria-hidden="true"></a>La gestion de la navigation</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-la-problématique-1" class="anchor" href="#la-problématique-1" aria-hidden="true"></a>La problématique</h4>
+<img src="images/router.png">
+<p>Dans 1 SPA, il y a 1 seul document HTML !</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-les-urls-et-les-fragments" class="anchor" href="#les-urls-et-les-fragments" aria-hidden="true"></a>Les URLs et les Fragments</h4>
+<p>Dans 1 SPA, il y a 1 seul document HTML…</p>
+<p>Pour éviter que le navigateur recharge les pages</p>
+<p>on utilise des <strong>fragments</strong></p>
+<ul>
+<li><a href="https://acme.org/#/catalog">https://acme.org/#/catalog</a></li>
+<li><a href="https://acme.org/#/cart">https://acme.org/#/cart</a></li>
+<li><a href="https://acme.org/#/signin">https://acme.org/#/signin</a></li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-vue-router" class="anchor" href="#vue-router" aria-hidden="true"></a><a href="https://router.vuejs.org/">Vue-Router</a></h3>
+<p>Le routeur officiel pour Vue.js</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-ajouter-le-routeur-a-une-application-vuejs" class="anchor" href="#ajouter-le-routeur-a-une-application-vuejs" aria-hidden="true"></a>Ajouter le routeur a une application Vue.js</h4>
+<h5><a id="user-content-dans-une-page-html" class="anchor" href="#dans-une-page-html" aria-hidden="true"></a>Dans une page HTML</h5>
+<pre><code class="language-html">&lt;script src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Vue Router doit être inclus après Vue.js --&gt;
+&lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h5><a id="user-content-ou-avec-un-système-de-build" class="anchor" href="#ou-avec-un-système-de-build" aria-hidden="true"></a>Ou avec un système de build</h5>
+<pre><code class="language-bash">npm install vue-router
+</code></pre>
+<pre><code class="language-javascript">import Vue from 'vue';
+
+// Vue Router doit être importé après Vue.js
+import VueRouter from 'vue-router';
+
+// Il faut indiquer à Vue.js d'utiliser le routeur
+Vue.use(VueRouter);
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-attacher-le-routeur-à-un-élément-html" class="anchor" href="#attacher-le-routeur-à-un-élément-html" aria-hidden="true"></a>Attacher le routeur à un élément HTML</h4>
+<p><a href="https://router.vuejs.org/api/#router-view">router-view</a></p>
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;
+    
+    &lt;h1&gt;Hello App!&lt;/h1&gt;
+
+    &lt;div id=&quot;footer&quot;&gt;...&lt;/div&gt;
+
+    &lt;!-- Le routeur va rendre les &quot;vues&quot; ici --&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+
+    &lt;div id=&quot;footer&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-définir-des-routes-et-attacher-le-routeur-à-lapplication" class="anchor" href="#définir-des-routes-et-attacher-le-routeur-à-lapplication" aria-hidden="true"></a>Définir des routes et attacher le routeur à l’application</h4>
+<p><a href="https://router.vuejs.org/api/#routes">routes</a></p>
+<pre><code class="language-javascript">// On importe les composants Vue.js souhaités
+import Page1 from './pages/Page1.vue';
+import Page2 from './pages/Page2.vue';
+import Page3 from './pages/Page2.vue';
+
+// On associe les composants aux routes (URI Http)
+const myRoutes = [
+  { path: '/page1', name: 'page1', component: Page1 },
+  { path: '/page2', name: 'page2', component: Page2 },
+  { path: '/page3', name: 'page3', component: Page3 },
+];
+
+// On créé une instance de Routeur en passant les routes
+const myRouter = new VueRouter({
+  routes: myRoutes,
+});
+
+const app = new Vue({
+
+    // A la création de l'instance Vue.js, on attache le routeur
+    router: myRouter,
+
+}).$mount('#app');
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-accéder-aux-informations-du-routeur-depuis-les-composants" class="anchor" href="#accéder-aux-informations-du-routeur-depuis-les-composants" aria-hidden="true"></a>Accéder aux informations du routeur depuis les composants</h4>
+<pre><code class="language-javascript">// Tous les composants peuvent accéder au router avec la propriété $router
+this.$router;
+
+// Tous les composants peuvent accéder à la route active avec la propriété $route
+this.$route;
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-les-routes-dynamiques" class="anchor" href="#les-routes-dynamiques" aria-hidden="true"></a>Les routes dynamiques</h4>
+<p><a href="https://router.vuejs.org/guide/essentials/dynamic-matching.html">/route/:dynamic</a></p>
+<pre><code class="language-javascript">const router = new VueRouter({
+
+    routes: [
+    
+        // La route va matcher /user/0, /user/1...
+        { path: '/user/:id', component: User }
+
+    ]
+});
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-les-propriétés-des-routes" class="anchor" href="#les-propriétés-des-routes" aria-hidden="true"></a>Les propriétés des Routes</h4>
+<p><a href="https://router.vuejs.org/api/#route-object-properties">route properties</a></p>
+<pre><code class="language-md">- path  : le chemin de la route      (/page1)
+- name  : le nom de la route         (optionnel)
+- params: les paramètres de la route (/user/123)
+- query : les query params           (?a=1&amp;b=2)
+
+
+- Exemple
+
+    - Route = /categories/:category/items/:item
+
+
+    - https://acme.com/#/categories/123/items/456?sort=asc&amp;new=true
+
+        - $route.path   =&gt; /categories/123/items/456
+        - $route.params =&gt; { category: '123', item: '456' }
+        - $route.query  =&gt; { sort: 'asc',     new: 'true' }
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-ordre-dévaluation-des-routes" class="anchor" href="#ordre-dévaluation-des-routes" aria-hidden="true"></a>Ordre d’évaluation des routes</h4>
+<p><a href="https://router.vuejs.org/guide/essentials/dynamic-matching.html#catch-all-404-not-found-route">404</a></p>
+<pre><code class="language-javascript">// Les routes sont évaluées dans l'ordre
+const myRoutes = [
+  { path: '/page1', component: Page1 },
+  { path: '/page2', component: Page2 },
+  { path: '*',      component: PageNotFound }, // * va matcher toutes les routes
+];
+
+// Si /page1 -&gt; Page1
+// Si /page2 -&gt; Page2
+// Si /page3 -&gt; PageNotFound
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-routes-imbriquées" class="anchor" href="#routes-imbriquées" aria-hidden="true"></a>Routes imbriquées</h4>
+<pre><code class="language-javascript">// Composant User avec son propre &lt;router-view&gt;
+const User = {
+  template: `
+    &lt;div class=&quot;user&quot;&gt;
+      &lt;h2&gt;User {{ $route.params.id }}&lt;/h2&gt;
+      &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;/div&gt;
+  `
+};
+
+const router = new VueRouter({
+  routes: [
+    { path: '/user/:id', component: User,
+      children: [
+        
+        // UserProfile sera rendu dans le &lt;router-view&gt; de User
+        // quand url = /user/:id/profile
+        { path: 'profile', component: UserProfile },
+
+        // UserPosts sera rendu dans &lt;router-view&gt; de User
+        // quand url = /user/:id/posts
+        { path: 'posts', component: UserPosts },
+
+      ]
+    }
+  ]
+});
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-gérer-la-navigation-dans-les-templates" class="anchor" href="#gérer-la-navigation-dans-les-templates" aria-hidden="true"></a>Gérer la navigation dans les templates</h4>
+<p><a href="https://router.vuejs.org/api/#router-link">router-link</a></p>
+<pre><code class="language-vue">&lt;div id=&quot;app&quot;&gt;
+  &lt;h1&gt;Hello App!&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;!-- le router-link sera rendu comme un &lt;a href=&quot;&quot;&gt; --&gt;
+    &lt;router-link to=&quot;/page1&quot;&gt;Go to Page1&lt;/router-link&gt;
+    &lt;router-link to=&quot;/page2&quot;&gt;Go to Page2&lt;/router-link&gt;
+  &lt;/p&gt;
+
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/div&gt;
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-gérer-la-navigation-en-javascript" class="anchor" href="#gérer-la-navigation-en-javascript" aria-hidden="true"></a>Gérer la navigation en JavaScript</h4>
+<p><a href="https://router.vuejs.org/guide/essentials/navigation.html">programmatic navigation</a></p>
+<pre><code class="language-javascript">// Dans un composant...
+
+
+// Naviguer vers le chemin /home
+this.$router.push('home')
+
+
+// Naviguer vers la chemin /home (version objet)
+this.$router.push({ path: 'home' })
+
+
+// Naviguer vers le chemin /register avec le query param ?plan=private
+this.$router.push({ path: 'register', query: { plan: 'private' } })
+
+
+// Naviguer vers la route nommée 'user' avec un param userId
+this.$router.push({ name: 'user', params: { userId: '123' } })
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-les-contrôles-de-navigation" class="anchor" href="#les-contrôles-de-navigation" aria-hidden="true"></a>Les contrôles de navigation</h4>
+<p><a href="https://router.vuejs.org/guide/advanced/navigation-guards.html">navigation guards</a></p>
+<pre><code class="language-vue">&lt;script&gt;
+module.exports = {
+    
+    data: function() {return {}},
+
+    beforeRouteEnter (to, from, next) {
+        // Appeler avant de changer la route
+        // Il faut appeler next() pour confirmer la navigation
+    },
+
+    beforeRouteUpdate (to, from, next) {
+        // Appeler quand la route change mais le même composant est affiché
+        // Ex : /user/1 et /user/2
+        // Il faut appeler next() pour confirmer la navigation
+    },
+
+    beforeRouteLeave (to, from, next) {
+        // Appeler quand la navigation va quitter le composant
+        // Il faut appeler next() pour confirmer la navigation
+    }
+}
+&lt;/script&gt;
+
+&lt;template&gt;...&lt;/template&gt;
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-les-tests" class="anchor" href="#les-tests" aria-hidden="true"></a>Les tests</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-typologie-de-tests" class="anchor" href="#typologie-de-tests" aria-hidden="true"></a>Typologie de tests</h4>
+<img src="images/testing_pyramid.png">
+<ul>
+<li><strong>Tests Unitaires</strong>
+<ul>
+<li>Teste qu’un composant fonctionne unitairement</li>
+</ul>
+</li>
+<li><strong>Tests d’Intégration</strong>
+<ul>
+<li>Teste que les composants fonctionnent une fois intégrés</li>
+</ul>
+</li>
+<li><strong>Tests de bout-en-bout</strong>
+<ul>
+<li>Teste que le système fonctionne comme attendu par l’Utilisateur</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-pourquoi-tester-" class="anchor" href="#pourquoi-tester-" aria-hidden="true"></a>Pourquoi tester ?</h4>
+<ul>
+<li>
+<p>Une manière de documenter ce que fait le code</p>
+</li>
+<li>
+<p>Evite de restester manuellement après chaque changement</p>
+</li>
+<li>
+<p>Evite le risque de régression lors d’ajout de fonctionnalités</p>
+</li>
+<li>
+<p>Améliore l’architecture du code</p>
+</li>
+<li>
+<p>Facilite le refactoring</p>
+</li>
+<li>
+<p>…</p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-tester-unitairement-un-composant-vuejs" class="anchor" href="#tester-unitairement-un-composant-vuejs" aria-hidden="true"></a>Tester unitairement un composant Vue.js</h4>
+<p>Nous avons besoin de :</p>
+<ul>
+<li>
+<p>Un “Test Runner” pour exécuter les tests : <a href="https://jestjs.io/">Jest</a></p>
+</li>
+<li>
+<p>Une implémentation “mock” du DOM pour node.js : <a href="https://github.com/jsdom/jsdom">JsDom</a></p>
+</li>
+<li>
+<p>Des facilités pour manipuler les composants : <a href="https://vue-test-utils.vuejs.org/">Vue Test Utils</a></p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-exemple-de-test-unitaire" class="anchor" href="#exemple-de-test-unitaire" aria-hidden="true"></a>Exemple de Test Unitaire</h4>
+<pre><code class="language-vue">&lt;!-- Exemple de composant Hello.vue --&gt;
+&lt;template&gt;
+    &lt;span&gt;{{ msg }}&lt;/span&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+        props: ['msg'],
+    }
+&lt;/script&gt;
+</code></pre>
+<pre><code class="language-javascript">// Exemple de TU Hello.test.js
+import Hello from './Hello.vue';                 // import du composant
+import { shallowMount } from '@vue/test-utils';  // import fonction utilitaire
+
+// Définit la suite de tests du composant
+describe('Hello', () =&gt; {
+
+    // Définit 1 test du composant
+    it('should render as expected when called with prop Hello!', () =&gt; {
+        expect(
+            shallowMount(Hello, { propsData: { msg: 'Hello!'} }).text()
+        ).toBe('Hello!');
+    });
+
+    // Définit 1 test du composant
+    it('should render as expected when called with prop Good bye!', () =&gt; {
+        expect(
+            shallowMount(Hello, { propsData: { msg: 'Good bye!'} }).text()
+        ).toBe('Good bye!');
+    });
+});
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-tester-une-application-de-bout-en-bout" class="anchor" href="#tester-une-application-de-bout-en-bout" aria-hidden="true"></a>Tester une application de bout-en-bout</h4>
+<p>L’objectif est de s’assurer que le comportement est conforme aux attentes de l’Utilisateur.</p>
+<p>Il faut donc un véritable navigateur.</p>
+<p>Plusieurs frameworks de tests existent et fonctionnent de manière différente :</p>
+<ul>
+<li>Nightwatch (basé sur Selenium)</li>
+<li>Cypress</li>
+<li>TestCafe</li>
+<li>…</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-exemple-de-test-e2e-avec-cypress" class="anchor" href="#exemple-de-test-e2e-avec-cypress" aria-hidden="true"></a>Exemple de test E2E avec Cypress</h4>
+<pre><code class="language-javascript">describe('Testing Acme.com', () =&gt; {
+    it('Visits the Contact Page', () =&gt; {
+        cy.visit( 'https://acme.com');
+        cy.contains('Contact Us').click();
+        cy.url().should('include', '/contact');
+    });
+});
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-labs-4" class="anchor" href="#labs-4" aria-hidden="true"></a>Labs</h3>
+<img src="images/lab.png">
+            </section>
+        
+            <section >
+                <h3><a id="user-content-lab0501" class="anchor" href="#lab0501" aria-hidden="true"></a>lab/05/01</h3>
+<h4><a id="user-content-routeur" class="anchor" href="#routeur" aria-hidden="true"></a>Routeur</h4>
+<pre><code class="language-md">1. Sous lab/05/01, installer les dépendances
+    - npm install
+
+
+2. Démarrer l'application
+    - npm run serve
+
+
+3. Ouvrir l'application et naviguer entre les 3 pages
+    - http://localhost:8080/#/page-a
+    - http://localhost:8080/#/page-b
+    - http://localhost:8080/#/page-c
+
+
+4. Ajouter une page &quot;PageD&quot;
+    - Créer le composant sous /pages
+    - Ajouter un lien de navigation dans App.vue
+    - Ajouter une route dans router.js qui match /page-d
+
+
+5. Ajouter dans PageC un &lt;button&gt;Go to PageD&lt;/button&gt;
+    - Qui navigue vers PageD quand on clique dessus
+
+
+6. Modifier pour que la route vers PageD contienne un paramètre
+    - Modifier la route pour matcher /page-d/:message
+    - Modifier PageD pour afficher le message passé dans l'URL
+    - Vérifier en appelant http://localhost:8080/#/page-d/hello
+    - Modifier PageC en ajoutant un input qui bind une propriété message
+    - Modifier le bouton de PageC pour naviguer vers PageD avec le message   
+</code></pre>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-lab0502" class="anchor" href="#lab0502" aria-hidden="true"></a>lab/05/02</h3>
+<h4><a id="user-content-tests-e2e-avec-cypress" class="anchor" href="#tests-e2e-avec-cypress" aria-hidden="true"></a>Tests E2E avec Cypress</h4>
+<pre><code class="language-md">1. Sous lab/05/02/app,
+    - installer les dépendances
+        - npm install
+    - lancer l'application
+        - npm start
+    - Vérifier en ouvrant http://localhost:3000 dans le navigateur
+
+
+2. Sous lab/05/02/e2e,
+    - installer les dépendances
+        - npm install
+    - regarder les tests implémentés
+        - dans cypress/integration/app.spec.js
+    - exécuter les tests
+        - npm run cypress:test
+    - Vérifier dans le console que tous les tests dont passés
+
+
+3. Sous lab/05/02/e2e,
+    - lancer le debugger Cypress
+        - npm run cypress:open
+    - dans la fenêtre qui s'est ouverte
+        - choisir le navigateur à utiliser en haut à droite
+        - cliquer sur app.spec.js en haut à gauche
+    - le navigateur s'ouvre et exécute les tests
+
+
+4. Sous lab/05/02/e2e,
+    - modifier les tests et implémenter le test 'Remove book from cart'
+        - supprimer un article du panier
+        - vérifier que le total est correct
+</code></pre>
 
             </section>
         
