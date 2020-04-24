@@ -28,6 +28,8 @@ describe('Test Demo app', () => {
     it('Remove book from cart', () => {
 
         // TO BE IMPLEMENTED
+        cy.get('#cart_item_0').click();
+        cy.get('#cartTotal').should('contain', '19.80 €');
 
     });
 
