@@ -31,6 +31,17 @@
                 </h2>
             </v-col>
         </v-row>
+        <v-row>
+            <v-col>
+                <v-img
+                    scr="./public/catalog/shoes/0.jpg"
+                    class="white--text align-end"
+                    max-height="600px"
+                >
+                </v-img>
+                <v-btn> </v-btn>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
