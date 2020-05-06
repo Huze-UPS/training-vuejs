@@ -31,20 +31,49 @@
                 </h2>
             </v-col>
         </v-row>
-        <v-row>
-            <v-col>
-                <v-img
-                    scr="./public/catalog/shoes/0.jpg"
-                    class="white--text align-end"
-                    max-height="600px"
-                >
-                </v-img>
-                <v-btn> </v-btn>
-            </v-col>
-        </v-row>
+        <v-container fluid>
+            <v-row>
+                <v-col align-self="center">
+                    <v-card height="250px" width="250px">
+                        <v-img :src="categories[0].image" contain></v-img>
+                        <v-btn class="blue--text" @click="goToCatalog(categories[0].id)">DÉCOUVRIR NOS CHAUSSURES</v-btn>
+                    </v-card>
+                </v-col>
+                <v-col align-self="center">
+                    <v-card height="250px" width="250px">
+                        <v-img :src="categories[1].image" contain></v-img>
+                        <v-btn class="blue--text" @click="goToCatalog(categories[1].id)">DÉCOUVRIR NOS T-SHIRTS</v-btn>
+                    </v-card>
+                </v-col>
+                <v-col align-self="center">
+                    <v-card height="250px" width="250px">
+                        <v-img :src="categories[2].image" contain></v-img>
+                        <v-btn class="blue--text" @click="goToCatalog(categories[2].id)">DÉCOUVRIR NOS VESTES</v-btn>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
     </v-container>
 </template>
 
 <script>
-export default {};
+import serviceCatalog from '../services/catalog';
+export default {
+    data() {
+        return {
+            categories: [],
+        };
+    },
+    methods: {
+        goToCatalog(categoryId) {
+            this.$router.push({ name: 'Catalog', params: { categoryId } });
+        },
+    },
+    async beforeCreate() {
+        const categories = await serviceCatalog.getCategories();
+        this.categories = categories.sort((c1, c2) =>
+            c1.label.localeCompare(c2.label),
+        );
+    },
+};
 </script>
