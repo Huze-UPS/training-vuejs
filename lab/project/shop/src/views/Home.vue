@@ -33,23 +33,10 @@
         </v-row>
         <v-container fluid>
             <v-row>
-                <v-col align-self="center">
-                    <v-card height="250px" width="250px">
-                        <v-img :src="categories[0].image" height="200px" width="250px"></v-img>
-                        <router-link style="text-decoration: none" to="/catalog/shoes">DÉCOUVRIR NOS CHAUSSURES</router-link>
-                    </v-card>
-                </v-col>
-                <v-col align-self="center">
-                    <v-card height="250px" width="250px">
-                        <v-img :src="categories[1].image" height="200px" width="250px"></v-img>
-                        <router-link style="text-decoration: none" to="/catalog/t-shirts">DÉCOUVRIR NOS T-SHIRTS</router-link>
-
-                    </v-card>
-                </v-col>
-                <v-col align-self="center">
-                    <v-card height="250px" width="250px">
-                        <v-img :src="categories[2].image" height="200px" width="250px"></v-img>
-                        <router-link style="text-decoration: none" to="/catalog/jackets">DÉCOUVRIR NOS VESTES</router-link>
+                <v-col align-self="center" v-for="category in categories" :key="category.id" :value="category">
+                    <v-card class="ml-5" height="250" width="250" @click="goToCatalog(category.id)">
+                        <v-img :src="category.image" height="200" width="250"></v-img>
+                        <span class="blue--text">DECOUVRIR NOS {{ category.label.toUpperCase() }}</span>
                     </v-card>
                 </v-col>
             </v-row>
@@ -64,6 +51,12 @@ export default {
         return {
             categories: [],
         };
+    },
+
+    methods: {
+        goToCatalog(categoryId) {
+            this.$router.push({ name: 'Catalog', params: { categoryId } });
+        },
     },
 
     async beforeCreate() {
