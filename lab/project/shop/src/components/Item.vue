@@ -13,7 +13,7 @@
                 <span >{{ Number.parseFloat(item.unitPrice).toFixed(2) }} €</span>
             </v-col>
         </v-row>
-        <v-btn class="white--text black" @click="addToPanier(item)">AJOUTEZ AU PANIER</v-btn>
+        <v-btn class="white--text black" @click="addToCart(item)">AJOUTEZ AU PANIER</v-btn>
     </v-card>
 </template>
 
@@ -22,5 +22,13 @@ export default {
     props:{
         item: Object,
     },
+    methods: {
+
+        addToCart: function(itemToAdd) {
+            if (!this.cart.items.find(item => itemToAdd.label === item.label)) {
+                this.cart.items.push(itemToAdd);
+            }
+        },
+    }
 }
 </script>

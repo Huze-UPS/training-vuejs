@@ -58,6 +58,8 @@ export default {
             this.$router.push({ name: 'Catalog', params: { categoryId } });
         },
     },
+  
+
 
     async beforeCreate() {
         const categories = await serviceCatalog.getCategories();

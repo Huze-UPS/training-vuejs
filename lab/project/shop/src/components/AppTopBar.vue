@@ -18,7 +18,9 @@
                 </v-btn>
             </template>
             <v-card>
-                <v-card-title>TODO...</v-card-title>
+                <v-card-title>
+                    <cart></cart>
+                </v-card-title>
             </v-card>
         </v-menu>
     </v-app-bar>
@@ -26,7 +28,7 @@
 
 <script>
 import serviceCatalog from '../services/catalog';
-
+import Cart from '../components/Cart.vue';
 export default {
     data() {
         return {
@@ -37,6 +39,9 @@ export default {
         goToCatalog(categoryId) {
             this.$router.push({ name: 'Catalog', params: { categoryId } });
         },
+    },
+      components: {
+        Cart,
     },
 
     async beforeCreate() {
