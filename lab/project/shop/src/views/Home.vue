@@ -35,20 +35,21 @@
             <v-row>
                 <v-col align-self="center">
                     <v-card height="250px" width="250px">
-                        <v-img :src="categories[0].image" contain></v-img>
-                        <v-btn class="blue--text" @click="goToCatalog(categories[0].id)">DÉCOUVRIR NOS CHAUSSURES</v-btn>
+                        <v-img :src="categories[0].image" height="200px" width="250px"></v-img>
+                        <router-link style="text-decoration: none" to="/catalog/shoes">DÉCOUVRIR NOS CHAUSSURES</router-link>
                     </v-card>
                 </v-col>
                 <v-col align-self="center">
                     <v-card height="250px" width="250px">
-                        <v-img :src="categories[1].image" contain></v-img>
-                        <v-btn class="blue--text" @click="goToCatalog(categories[1].id)">DÉCOUVRIR NOS T-SHIRTS</v-btn>
+                        <v-img :src="categories[1].image" height="200px" width="250px"></v-img>
+                        <router-link style="text-decoration: none" to="/catalog/t-shirts">DÉCOUVRIR NOS T-SHIRTS</router-link>
+
                     </v-card>
                 </v-col>
                 <v-col align-self="center">
                     <v-card height="250px" width="250px">
-                        <v-img :src="categories[2].image" contain></v-img>
-                        <v-btn class="blue--text" @click="goToCatalog(categories[2].id)">DÉCOUVRIR NOS VESTES</v-btn>
+                        <v-img :src="categories[2].image" height="200px" width="250px"></v-img>
+                        <router-link style="text-decoration: none" to="/catalog/jackets">DÉCOUVRIR NOS VESTES</router-link>
                     </v-card>
                 </v-col>
             </v-row>
@@ -64,11 +65,7 @@ export default {
             categories: [],
         };
     },
-    methods: {
-        goToCatalog(categoryId) {
-            this.$router.push({ name: 'Catalog', params: { categoryId } });
-        },
-    },
+
     async beforeCreate() {
         const categories = await serviceCatalog.getCategories();
         this.categories = categories.sort((c1, c2) =>

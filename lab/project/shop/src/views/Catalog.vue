@@ -1,8 +1,16 @@
 <template>
-    <h2>Here</h2>
+    <v-for>
+    
 </template>
 
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            categories: [],
+        };
+    },
+};
+
 </script>
