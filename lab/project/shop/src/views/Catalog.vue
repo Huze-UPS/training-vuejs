@@ -1,7 +1,7 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col v-for="item in category.items" :key="item.label" :value="item">
+        <v-row wrap="true">
+            <v-col wrap="true" v-for="item in category.items" :key="item.label" :value="item">
                 <item :item="item"></item>
             </v-col>
         </v-row>

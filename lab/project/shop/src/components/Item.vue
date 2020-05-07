@@ -1,5 +1,5 @@
 <template>
-    <v-card  height="300" width="240">
+    <v-card  height="500" width="240">
         <h4>{{ item.label }}</h4>
         <br />
         <span>{{ item.brand }}</span>

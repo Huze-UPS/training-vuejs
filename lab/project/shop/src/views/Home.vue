@@ -33,7 +33,7 @@
         </v-row>
         <v-container fluid>
             <v-row>
-                <v-col align-self="center" v-for="category in categories" :key="category.id" :value="category">
+                <v-col align="center" justify="center" v-for="category in categories" :key="category.id" :value="category">
                     <v-card class="ml-5" height="250" width="250" @click="goToCatalog(category.id)">
                         <v-img :src="category.image" height="200" width="250"></v-img>
                         <span class="blue--text">DECOUVRIR NOS {{ category.label.toUpperCase() }}</span>
