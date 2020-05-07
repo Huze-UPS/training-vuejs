@@ -1,26 +1,26 @@
 <template>
-    <div>
-        <v-card height="250px" width="250px" v-for="item in category.items" :key="item.label" :value="item">
-            <h4>{{ item.label }}</h4>
-            <br />
-            <p>{{ item.brand }}</p>
-            <br />
-            <v-img :src="item.image"></v-img>
-            <v-container>
-                <v-row>
-                    <label>Taille</label>
-                        <v-select id="sizes" class="form-control" v-model="item.sizes">
-                            <option v-for="size in item.sizes" :key="size" :value="size">{{ size }}</option>
-                        </v-select>
-                    <h4>{{ item.unitPrice }} €</h4>
-                <v-row>
-            </v-container>
-            <v-btn class="white--text black">AJOUTER AU PANIER</v-btn>
-        </v-card>
-    </div>
-    
+    <v-card  height="300" width="240">
+        <h4>{{ item.label }}</h4>
+        <br />
+        <span>{{ item.brand }}</span>
+        <v-img :src="item.image" height="240" width="240"></v-img>
+        <br />
+        <v-row>
+            <v-col cols="5">
+                <v-select :items="item.sizes" id="sizes" label="Taille" outlined></v-select>
+            </v-col>
+            <v-col>
+                <span >{{ Number.parseFloat(item.unitPrice).toFixed(2) }} €</span>
+            </v-col>
+        </v-row>
+        <v-btn class="white--text black" @click="addToPanier(item)">AJOUTEZ AU PANIER</v-btn>
+    </v-card>
 </template>
 
 <script>
-export default {};
+export default {
+    props:{
+        item: Object,
+    },
+}
 </script>
