@@ -3,8 +3,8 @@
         <h5>Mon Panier</h5>
         <v-row v-for="item in cart" :key="item.label" :value="item">
             <span>{{ item.label }} - {{ item.brand }} ({{ item.size }})                     {{item.quantity}}
-                <v-btn text icon><v-icon @click="subToQuantity(item)">mdi-arrow-down</v-icon></v-btn>
-                <v-btn text icon><v-icon @click="addToQuantity(item)">mdi-arrow-up</v-icon></v-btn>
+                <v-btn text icon><v-icon @click="incrementCartItem(itemId)">mdi-arrow-up</v-icon></v-btn>
+                <v-btn text icon><v-icon @click="decrementCartItem(itemId)">mdi-arrow-down</v-icon></v-btn>
                             {{ item.price}}
             </span>
         </v-row>

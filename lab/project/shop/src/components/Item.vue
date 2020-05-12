@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import serviceCart from '../services/cart';
 export default {
     props:{
         item: Object,
@@ -25,10 +26,8 @@ export default {
     methods: {
 
         addToCart: function(itemToAdd) {
-            if (!this.cart.items.find(item => itemToAdd.label === item.label)) {
-                this.cart.items.push(itemToAdd);
-            }
+            serviceCart.addToCart(itemToAdd);
         },
-    }
-}
+    },
+};
 </script>

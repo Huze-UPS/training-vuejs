@@ -1,11 +1,13 @@
 <template>
-    <v-container>
-        <v-row wrap="true">
-            <v-col wrap="true" v-for="item in category.items" :key="item.label" :value="item">
-                <item :item="item"></item>
-            </v-col>
-        </v-row>
-    </v-container>
+    <div>
+        <v-container>
+            <v-row wrap="true">
+                <v-col wrap="true" v-for="item in category.items" :key="item.label" :value="item">
+                    <item :item="item"></item>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
 </template>
 
 
